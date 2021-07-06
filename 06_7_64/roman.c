@@ -1,5 +1,29 @@
 #include <stdio.h>
 
+int chnum[13] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+char *roman[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    while (N--)
+    {
+        int i, num, j;
+        scanf("%d", &num);
+        for (i = 0; i < 13; i++)
+        {
+            int check = num / chnum[i];
+            num = num % chnum[i];
+            for (j = 0; j < check; j++)
+            {
+                printf("%s", roman[i]);
+            }
+        }
+        printf("\n");
+    }
+}
+/*
 int main(void)
 {
     int N, i = 0, num;
@@ -80,3 +104,4 @@ int main(void)
 
     return 0;
 }
+*/
